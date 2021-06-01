@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <title>Document</title>
+    <title>Register</title>
 </head>
 <body>
     <!-- Navbar-->
@@ -41,7 +41,13 @@
                                 <i class="fa fa-user text-muted"></i>
                             </span>
                         </div>
-                        <input id="firstName" type="text" name="firstname" placeholder="First Name" class="form-control bg-white border-left-0 border-md">
+                       
+                        <input id="firstName" type="text" name="firstname" placeholder="First Name" class="form-control  @error('firstname') @enderror bg-white border-left-0 border-md">
+                        @error('firstname')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
 
                     <!-- Last Name -->
@@ -51,7 +57,12 @@
                                 <i class="fa fa-user text-muted"></i>
                             </span>
                         </div>
-                        <input id="lastName" type="text" name="lastname" placeholder="Last Name" class="form-control bg-white border-left-0 border-md">
+                        <input id="lastName" type="text" name="lastname" placeholder="Last Name" class="form-control @error('lastname')is-invalid @enderror bg-white border-left-0 border-md">
+                        @error('lastname')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                     </div>
 
                     <!-- Email Address -->
@@ -61,7 +72,12 @@
                                 <i class="fa fa-envelope text-muted"></i>
                             </span>
                         </div>
-                        <input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
+                        <input id="email" type="email" name="email" placeholder="Email Address" class="form-control @error('email') is-invalid @enderror bg-white border-left-0 border-md">
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                     </div>
 
                     <!-- Phone Number -->
@@ -72,8 +88,14 @@
                             </span>
                         </div>
                        
-                        <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3">
+                        <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" class="form-control @error('phone') is-invalid @enderror bg-white border-md border-left-0 pl-3">
+                        @error('phone')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                         @enderror
                     </div>
+                  
 
 
                     <!-- Password -->
@@ -83,7 +105,12 @@
                                 <i class="fa fa-lock text-muted"></i>
                             </span>
                         </div>
-                        <input id="password" type="password" name="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
+                        <input id="password" type="password" name="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror bg-white border-left-0 border-md">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                     </div>
 
                     <!-- Password Confirmation -->
@@ -93,7 +120,13 @@
                                 <i class="fa fa-lock text-muted"></i>
                             </span>
                         </div>
-                        <input id="passwordConfirmation" type="password" name="password_confirmation" placeholder="Confirm Password" class="form-control bg-white border-left-0 border-md">
+                       
+                        <input id="passwordConfirmation" type="password" name="password_confirmation" placeholder="Confirm Password" class="form-control @error('password_confirmation') is-invalid @enderror bg-white border-left-0 border-md">
+                        @error('password_confirmation')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                     </div>
 
                     <!-- Submit Button -->

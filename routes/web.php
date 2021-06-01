@@ -20,7 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 Route::group(['middleware'=>'user','auth'] ,function(){
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/user/cart', 'HomeController@cart')->name('cart');
+Route::get('/user/cart/{id}', 'HomeController@cart')->name('cart');
+Route::patch('/user/order/{id}','HomeController@order')->name('order');
 });
 Route::group(['middleware'=>'admin','auth'] ,function(){
 Route::get('/admin/home', 'AdminController@index')->name('admin');

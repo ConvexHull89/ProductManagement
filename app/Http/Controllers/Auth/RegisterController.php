@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'password' => ['required', 'min:6','max:12','string', 'confirmed'],
             'firstname' => ['required', 'string'],
             'lastname' => ['required', 'string'],
-            'phone' => ['required', 'numeric'],
+            'phone' => 'required|regex:/08[0-9]{9}/'
         ]);
     }
     protected function create(array $data)
