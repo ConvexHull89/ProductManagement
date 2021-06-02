@@ -22,6 +22,7 @@ Route::group(['middleware'=>'user','auth'] ,function(){
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user/cart/{id}', 'HomeController@cart')->name('cart');
 Route::patch('/user/order/{id}','HomeController@order')->name('order');
+Route::get('/user/invoice','HomeController@invoice')->name('invoice');
 });
 Route::group(['middleware'=>'admin','auth'] ,function(){
 Route::get('/admin/home', 'AdminController@index')->name('admin');

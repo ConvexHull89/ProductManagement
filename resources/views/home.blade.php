@@ -80,6 +80,9 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+@if($products->count()==0)
+<h2 class="mt-0 mb-5 ml-3 text-danger" style="text-align:center">There is no item yet!</h2>
+@else
 <h2 class="mt-0 mb-5 ml-3" style="text-align:center">Hi, There! What do you want to buy today?</h2>
 <hr>
 @foreach($products as $product)
@@ -119,3 +122,5 @@
 </div>
 <hr>
 @endforeach
+@endif
+<a href="{{route('invoice')}}" class="btn btn-primary mt-5 mb-5" style="display: block; margin:auto; width: 80%">See Invoice</a>

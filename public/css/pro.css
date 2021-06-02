@@ -34,7 +34,10 @@
 
 .product-title{
 	font-size: 20px;
+	border:none;
+	pointer-events: none;
 }
+
 
 .product-desc{
 	font-size: 14px;
@@ -42,10 +45,17 @@
 
 .product-price{
 	font-size: 22px;
+	border:none;
+	pointer-events: none;
 }
 
 .product-stock{
 	color: #74DF00;
+	font-size: 20px;
+	margin-top: 10px;
+}
+.product-out{
+	color: #f30404;
 	font-size: 20px;
 	margin-top: 10px;
 }
